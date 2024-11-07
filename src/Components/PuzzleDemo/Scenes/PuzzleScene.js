@@ -34,6 +34,18 @@ export default class PuzzleScene extends Phaser.Scene {
         this.load.image('yellow', '/Assets/New/3.png')
 
         this.load.image('transparente', '/Assets/New/Transparente.png')
+
+        //Cubos
+        this.load.image('redC', '/Assets/Cubos/1.png')
+        this.load.image('blueC', '/Assets/Cubos/8.png')
+        this.load.image('greenC', '/Assets/Cubos/4.png')
+        this.load.image('whiteC', '/Assets/Cubos/13.png')
+        this.load.image('borderC','/Assets/Cubos/Borde.png')
+
+        this.load.image('darkBlueC', '/Assets/Cubos/7.png')
+        this.load.image('lightGreenC', '/Assets/Cubos/5.png')
+        this.load.image('pinkC', '/Assets/Cubos/12.png')
+        this.load.image('yellowC', '/Assets/Cubos/3.png')
         
         //this.load.image("background", "../")
 
@@ -56,13 +68,13 @@ export default class PuzzleScene extends Phaser.Scene {
         this.selectedColor = "trasnparente";
 
         // Configurar los botones para actualizar `selectedColor`
-        this.redButton = this.add.image(0, 0, 'red').setInteractive({ useHandCursor: true });
-        this.yellowButton = this.add.image(0, 0, 'yellow').setInteractive({ useHandCursor: true });
-        this.greenButton = this.add.image(0, 0, 'green').setInteractive({ useHandCursor: true });
-        this.lightGreenButton = this.add.image(0, 0, 'lightGreen').setInteractive({ useHandCursor: true });
-        this.darkBlueButton = this.add.image(0, 0, 'darkBlue').setInteractive({ useHandCursor: true });
-        this.blueButton = this.add.image(0, 0, 'blue').setInteractive({ useHandCursor: true });
-        this.pinkButton = this.add.image(0, 0, 'pink').setInteractive({ useHandCursor: true });
+        this.redButton = this.add.image(0, 0, 'redC').setInteractive({ useHandCursor: true });
+        this.yellowButton = this.add.image(0, 0, 'yellowC').setInteractive({ useHandCursor: true });
+        this.greenButton = this.add.image(0, 0, 'greenC').setInteractive({ useHandCursor: true });
+        this.lightGreenButton = this.add.image(0, 0, 'lightGreenC').setInteractive({ useHandCursor: true });
+        this.darkBlueButton = this.add.image(0, 0, 'darkBlueC').setInteractive({ useHandCursor: true });
+        this.blueButton = this.add.image(0, 0, 'blueC').setInteractive({ useHandCursor: true });
+        this.pinkButton = this.add.image(0, 0, 'pinkC').setInteractive({ useHandCursor: true });
 
 
         this.redButton.on('pointerdown', () => this.selectedColor = "red");
@@ -97,26 +109,26 @@ export default class PuzzleScene extends Phaser.Scene {
         text.setPosition(width / 3.5, height * 0.03);
         text.setWordWrapWidth(width * 0.8);
 
-        redButton.setPosition(width / 2.8, height * 0.12);
-        scaleImage(redButton, width / 8, height / 2, 100, 0.4)
+        redButton.setPosition(width / 3.2, height * 0.15);
+        scaleImage(redButton, width/8, height/2, 100, 1.5)
 
-        yellowButton.setPosition(width / 2.6, height * 0.12);
-        scaleImage(yellowButton, width / 8, height / 2, 100, 0.4)
+        yellowButton.setPosition(width / 2.66, height * 0.15);
+        scaleImage(yellowButton, width / 8, height / 2, 100, 1.5)
 
-        greenButton.setPosition(width / 2.4, height * 0.12);
-        scaleImage(greenButton, width / 8, height / 2, 100, 0.4)
+        greenButton.setPosition(width / 2.28, height * 0.15);
+        scaleImage(greenButton, width / 8, height / 2, 100, 1.5)
 
-        lightGreenButton.setPosition(width / 2.2, height * 0.12);
-        scaleImage(lightGreenButton, width / 8, height / 2, 100, 0.4)
+        lightGreenButton.setPosition(width / 2.0, height * 0.15);
+        scaleImage(lightGreenButton, width / 8, height / 2, 100, 1.5)
 
-        darkBlueButton.setPosition(width / 2, height * 0.12);
-        scaleImage(darkBlueButton, width / 8, height / 2, 100, 0.4)
+        darkBlueButton.setPosition(width / 1.78, height * 0.15);
+        scaleImage(darkBlueButton, width / 8, height / 2, 100, 1.5)
 
-        blueButton.setPosition(width / 1.8, height * 0.12);
-        scaleImage(blueButton, width / 8, height / 2, 100, 0.4)
+        blueButton.setPosition(width / 1.6, height * 0.15);
+        scaleImage(blueButton, width / 8, height / 2, 100, 1.5)
 
-        pinkButton.setPosition(width / 1.6, height * 0.12);
-        scaleImage(pinkButton, width / 8, height / 2, 100, 0.4)
+        pinkButton.setPosition(width / 1.45, height * 0.15);
+        scaleImage(pinkButton, width / 8, height / 2, 100, 1.5)
 
     }
 }
