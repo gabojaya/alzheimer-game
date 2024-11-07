@@ -1,6 +1,7 @@
 import Phaser from 'phaser'
 //import {matrixFill2} from '../Utils/DrawMatrix' // Circulo
-import {matrixFill2} from '../Utils/DrawMatrix1' // Flor
+//import {matrixFill2} from '../Utils/DrawMatrix1' // Flor
+import {matrixFill2} from '../Utils/DrawMatrix2' // Estrella
 import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
 
 
@@ -32,6 +33,8 @@ export default class PuzzleScene extends Phaser.Scene {
         this.load.image('lightGreen', '/Assets/New/5.png')
         this.load.image('pink', '/Assets/New/12.png')
         this.load.image('yellow', '/Assets/New/3.png')
+        this.load.image('orange', '/Assets/New/2.png')
+        this.load.image('black','/Assets/New/0.png')
         this.load.image('transparente', '/Assets/New/Transparente.png')
 
 
@@ -47,8 +50,9 @@ export default class PuzzleScene extends Phaser.Scene {
         this.load.image('pinkC', '/Assets/Cubos/12.png')
         this.load.image('yellowC', '/Assets/Cubos/3.png')
         this.load.image('blackC', '/Assets/Cubos/0.png')
+        this.load.image('orangeC', '/Assets/Cubos/2.png')
 
-        this.load.image('black','/Assets/New/0.png')
+        
 
 
         //this.load.image("background", "../")
@@ -70,6 +74,7 @@ export default class PuzzleScene extends Phaser.Scene {
         this.selectedColor = "blue";
         this.selectedColor = "pink";
         this.selectedColor = "trasnparente";
+        this.selectedColor = "orange";
         this.selectedColor = "black";
 
         // Configurar los botones para actualizar `selectedColor`
@@ -83,7 +88,7 @@ export default class PuzzleScene extends Phaser.Scene {
         this.pinkButton = this.add.image(0, 0, 'pinkC').setInteractive({ useHandCursor: true });
 
         this.blackButton = this.add.image(0, 0, 'blackC').setInteractive({ useHandCursor: true });
-
+        this.orangeButton = this.add.image(0, 0, 'orangeC').setInteractive({ useHandCursor: true });
 
 
         this.redButton.on('pointerdown', () => this.selectedColor = "red");
@@ -94,6 +99,7 @@ export default class PuzzleScene extends Phaser.Scene {
         this.blueButton.on('pointerdown', () => this.selectedColor = "blue");
         this.pinkButton.on('pointerdown', () => this.selectedColor = "pink");
         this.blackButton.on('pointerdown', () => this.selectedColor = "black");
+        this.orangeButton.on('pointerdown', () => this.selectedColor = "orange");
         matrixFill2(this)
 
         //Resize
@@ -107,7 +113,7 @@ export default class PuzzleScene extends Phaser.Scene {
         const halfHeight = height / 5;
         const yOffSet= height/6
 
-        const { text, imges,redButton,yellowButton,greenButton,lightGreenButton,darkBlueButton,blueButton, pinkButton, blackButton } = this;
+        const { text, imges,redButton,yellowButton,greenButton,lightGreenButton,darkBlueButton,blueButton, pinkButton, blackButton, orangeButton } = this;
         text.setFontSize(`${halfHeight * 0.15}px`);
         for (var j = 0; j < imges.length; j++) {
             imges[j].forEach(img => img.resize(width * 0.08, height * 0.08, 34, 1.00))//ajusta el tamano de los bloques
@@ -145,6 +151,9 @@ export default class PuzzleScene extends Phaser.Scene {
 
         blackButton.setPosition(width / 1.33, height * 0.15);
         scaleImage(blackButton, width / 8, height / 2, 100, 1.5)
+
+        orangeButton.setPosition(width / 1.23, height * 0.15);
+        scaleImage(orangeButton, width / 8, height / 2, 100, 1.5)
 
     }
 }
