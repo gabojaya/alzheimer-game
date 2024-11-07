@@ -119,7 +119,7 @@ export default class PuzzleScene extends Phaser.Scene {
             imges[j].forEach(img => img.resize(width * 0.08, height * 0.08, 34, 1.00))//ajusta el tamano de los bloques
             // eslint-disable-next-line 
             //                                                                    0.27     
-            imges[j].forEach((img, index) => img.setPosition(xOffset+ halfWidth * 0.255 * (index + 10), yOffSet+(halfHeight/4 * (j + 2.5))))//ajustar en funcion de la posicion...
+            imges[j].forEach((img, index) => img.setPosition(xOffset+ halfWidth * 0.255 * (index + 10), yOffSet+(halfHeight/4 * (j + 2))))//ajustar en funcion de la posicion...
         }
 
         text.setPosition(width / 3.5, height * 0.03);
