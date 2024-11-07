@@ -59,7 +59,7 @@ export default class PuzzleScene extends Phaser.Scene {
     //Funcion de resize a landscape de la scena
     resizeLandscape(width, height) {
         const halfWidth = width / 11.5;
-        const xOffset= width/2.5;
+        const xOffset= width/3;
         const halfHeight = height / 5;
         const yOffSet= height/4
 
