@@ -152,6 +152,7 @@ export default class SquareElement extends Phaser.GameObjects.Container {
                 this.blue.setVisible(false);
                 this.pink.setVisible(false);
                 this.black.setVisible(false);
+                this.orange.setVisible(false);
 
                 break;
             case "darkBlue":
