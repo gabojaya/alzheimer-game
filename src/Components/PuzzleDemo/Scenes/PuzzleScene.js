@@ -46,6 +46,8 @@ export default class PuzzleScene extends Phaser.Scene {
         this.load.image('lightGreenC', '/Assets/Cubos/5.png')
         this.load.image('pinkC', '/Assets/Cubos/12.png')
         this.load.image('yellowC', '/Assets/Cubos/3.png')
+        this.load.image('blackC', '/Assets/Cubos/0.png')
+
         this.load.image('black','/Assets/New/0.png')
 
 
@@ -80,7 +82,7 @@ export default class PuzzleScene extends Phaser.Scene {
         this.blueButton = this.add.image(0, 0, 'blueC').setInteractive({ useHandCursor: true });
         this.pinkButton = this.add.image(0, 0, 'pinkC').setInteractive({ useHandCursor: true });
 
-        this.blackButton = this.add.image(0, 0, 'black').setInteractive({ useHandCursor: true });
+        this.blackButton = this.add.image(0, 0, 'blackC').setInteractive({ useHandCursor: true });
 
 
 
@@ -141,8 +143,8 @@ export default class PuzzleScene extends Phaser.Scene {
         pinkButton.setPosition(width / 1.45, height * 0.15);
         scaleImage(pinkButton, width / 8, height / 2, 100, 1.5)
 
-        blackButton.setPosition(width / 1.4, height * 0.12);
-        scaleImage(blackButton, width / 8, height / 2, 100, 0.4)
+        blackButton.setPosition(width / 1.33, height * 0.15);
+        scaleImage(blackButton, width / 8, height / 2, 100, 1.5)
 
     }
 }
