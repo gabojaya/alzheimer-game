@@ -70,7 +70,8 @@ export default class PuzzleScene extends Phaser.Scene {
             // eslint-disable-next-line 
             imges[j].forEach((img, index) => img.setPosition(xOffset+ halfWidth * 0.75 * (index + 1), yOffSet+(halfHeight/1.65 * (j + 1.5))))//ajustar en funcion de la posicion...
         }
-        text.setPosition(width / 35, height * 0.03);
+
+        text.setPosition(width / 3.5, height * 0.03);
         text.setWordWrapWidth(width * 0.8);
 
 
