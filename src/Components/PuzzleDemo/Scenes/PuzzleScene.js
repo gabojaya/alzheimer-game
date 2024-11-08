@@ -123,6 +123,8 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         this.pinkButton.on('pointerdown', () => this.selectedColor = "pink");
         this.blackButton.on('pointerdown', () => this.selectedColor = "black");
         this.orangeButton.on('pointerdown', () => this.selectedColor = "orange");
+        this.brownButton.on('pointerdown', () => this.selectedColor = "brown");
+        this.whiteButton.on('pointerdown', () => this.selectedColor = "white");
         
         matrixFill2(this)
 
