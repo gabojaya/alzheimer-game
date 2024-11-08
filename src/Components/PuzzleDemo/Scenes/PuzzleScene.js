@@ -1,13 +1,15 @@
 import Phaser from 'phaser'
-import {matrixFill2} from '../Utils/DrawMatrix' // Circulo
+//import {matrixFill2} from '../Utils/DrawMatrix' // Circulo
 //import {matrixFill2} from '../Utils/DrawMatrix1' // Flor
-//import {matrixFill2} from '../Utils/DrawMatrix2' // Estrella
+import {matrixFill2} from '../Utils/DrawMatrix2' // Estrella
 import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
+import { RestartButton } from '../../Button/restart-button.js';
 
 
-export default class PuzzleScene extends Phaser.Scene {
+ class PuzzleScene extends Phaser.Scene {
     constructor() {
         super('Game');
+        this.restartButton = new RestartButton(this);
     }
     init(data) {
         this.state = data.state;
@@ -23,7 +25,7 @@ export default class PuzzleScene extends Phaser.Scene {
         console.log(this.game.data)
     }
     preload() {
-
+        this.load.image('terminarButton', '/Assets/Button/terminar.png');
         this.load.image('puzzlescenebk', '/Assets/GameScenes/PuzzleSbk.png')
         console.log("paso de cuenta abajo 1 " + this.countDown)
         this.load.image('red', '/Assets/New/1.png')
@@ -65,6 +67,11 @@ export default class PuzzleScene extends Phaser.Scene {
             "Complete la figura seleccionando los colores deseados", {
             color: '#204659',
             align: 'justify',
+        });
+        this.restartButton = this.add.image(this.scale.width - 125, this.scale.height - 150, 'terminarButton');
+        this.restartButton.setInteractive();
+        this.restartButton.on('pointerdown', () => {
+            this.scene.start('SummaryScene');
         });
         
         // Variable que guarda el color seleccionado
@@ -159,3 +166,5 @@ export default class PuzzleScene extends Phaser.Scene {
 
     }
 }
+
+export default PuzzleScene;

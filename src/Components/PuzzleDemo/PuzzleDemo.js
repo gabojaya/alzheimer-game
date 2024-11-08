@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Phaser from "phaser";
 import PuzzleScene from "./Scenes/PuzzleScene"
 import StartScene from "./Scenes/StartScene";
+import SummaryScene from "./Scenes/SummaryScene";
 
 class PuzzleDemo extends Component {
     constructor() {
@@ -18,7 +19,7 @@ class PuzzleDemo extends Component {
             backgroundColor: '#c39ed7',
             type: Phaser.AUTO,
             scene:
-                [StartScene, PuzzleScene],
+                [StartScene, PuzzleScene, SummaryScene],
             scale: {
                 parent: 'phaser-game',
                 mode: Phaser.Scale.NONE,
