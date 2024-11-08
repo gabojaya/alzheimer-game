@@ -174,34 +174,34 @@ import { RestartButton } from '../../Button/restart-button.js';
         scaleImage(redButton, width / 8, height / 2, 100,1.5)
 
 
-        yellowButton.setPosition(width / 3.8, height * 0.15);
+        yellowButton.setPosition(width / 3.85, height * 0.15);
         scaleImage(yellowButton, width / 8, height / 2, 100, 1.5)
 
         greenButton.setPosition(width / 3.12, height * 0.15);
         scaleImage(greenButton, width / 8, height / 2, 100, 1.5)
 
-        lightGreenButton.setPosition(width / 2.6, height * 0.15);
+        lightGreenButton.setPosition(width / 2.62, height * 0.15);
         scaleImage(lightGreenButton, width / 8, height / 2, 100, 1.5)
 
-        darkBlueButton.setPosition(width / 2.2, height * 0.15);
+        darkBlueButton.setPosition(width / 2.25, height * 0.15);
         scaleImage(darkBlueButton, width / 8, height / 2, 100, 1.5)
 
-        blueButton.setPosition(width / 1.95, height * 0.15);
+        blueButton.setPosition(width / 1.98, height * 0.15);
         scaleImage(blueButton, width / 8, height / 2, 100, 1.5)
 
-        pinkButton.setPosition(width / 1.75, height * 0.15);
+        pinkButton.setPosition(width / 1.76, height * 0.15);
         scaleImage(pinkButton, width / 8, height / 2, 100, 1.5)
 
-        blackButton.setPosition(width / 1.55, height * 0.15);
+        blackButton.setPosition(width / 1.585, height * 0.15);
         scaleImage(blackButton, width / 8, height / 2, 100, 1.5)
 
-        orangeButton.setPosition(width / 1.40, height * 0.15);
+        orangeButton.setPosition(width / 1.44, height * 0.15);
         scaleImage(orangeButton, width / 8, height / 2, 100, 1.5)
 
-        brownButton.setPosition(width / 1.3, height * 0.15);
+        brownButton.setPosition(width / 1.32, height * 0.15);
         scaleImage(brownButton, width / 8, height / 2, 100, 1.5)
 
-        whiteButton.setPosition(width / 1.23, height * 0.15);
+        whiteButton.setPosition(width / 1.22, height * 0.15);
         scaleImage(whiteButton, width / 8, height / 2, 100, 1.5)
 
 
