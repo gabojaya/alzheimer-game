@@ -1,7 +1,7 @@
 import Phaser from 'phaser'
-import {matrixFill2} from '../Utils/DrawMatrix' // Circulo
-//import {matrixFill2} from '../Utils/DrawMatrix1' // Flor
-//import {matrixFill2} from '../Utils/DrawMatrix2' // Estrella
+import {matrixFill2} from '../Utils/DrawMatrixCircle' // Circulo
+//import {matrixFill2} from '../Utils/DrawMatrixRose' // Flor
+//import {matrixFill2} from '../Utils/DrawMatrixStar' // Estrella
 import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
 import { RestartButton } from '../../Button/restart-button.js';
 
@@ -40,6 +40,7 @@ import { RestartButton } from '../../Button/restart-button.js';
         this.load.image('yellow', '/Assets/New/3.png')
         this.load.image('orange', '/Assets/New/2.png')
         this.load.image('black','/Assets/New/0.png')
+        this.load.image('brown','/Assets/New/17.png')
         this.load.image('transparente', '/Assets/New/Transparente.png')
 
 
@@ -56,6 +57,8 @@ import { RestartButton } from '../../Button/restart-button.js';
         this.load.image('yellowC', '/Assets/Cubos/3.png')
         this.load.image('blackC', '/Assets/Cubos/0.png')
         this.load.image('orangeC', '/Assets/Cubos/2.png')
+        this.load.image('brownC', '/Assets/Cubos/17.png')
+        this.load.image('whiteC', '/Assets/Cubos/13.png')
 
 
 
@@ -92,6 +95,8 @@ import { RestartButton } from '../../Button/restart-button.js';
         this.selectedColor = "trasnparente";
         this.selectedColor = "orange";
         this.selectedColor = "black";
+        this.selectedColor = "brown";
+        this.selectedColor = "white";
 
         // Configurar los botones para actualizar `selectedColor`
 
@@ -105,6 +110,8 @@ import { RestartButton } from '../../Button/restart-button.js';
 
         this.blackButton = this.add.image(0, 0, 'blackC').setInteractive({ useHandCursor: true });
         this.orangeButton = this.add.image(0, 0, 'orangeC').setInteractive({ useHandCursor: true });
+        this.brownButton = this.add.image(0, 0, 'brownC').setInteractive({ useHandCursor: true });
+        this.whiteButton = this.add.image(0, 0, 'whiteC').setInteractive({ useHandCursor: true });
 
 
         this.redButton.on('pointerdown', () => this.selectedColor = "red");
@@ -116,7 +123,13 @@ import { RestartButton } from '../../Button/restart-button.js';
         this.pinkButton.on('pointerdown', () => this.selectedColor = "pink");
         this.blackButton.on('pointerdown', () => this.selectedColor = "black");
         this.orangeButton.on('pointerdown', () => this.selectedColor = "orange");
+<<<<<<< HEAD
         
+=======
+        this.brownButton.on('pointerdown', () => this.selectedColor = "brown");
+        this.whiteButton.on('pointerdown', () => this.selectedColor = "white");
+
+>>>>>>> d217609e823b22b8f9cb42e9d098ea67146ba807
         matrixFill2(this)
 
         //Resize
@@ -148,7 +161,7 @@ import { RestartButton } from '../../Button/restart-button.js';
         const halfHeight = height / 5;
         const yOffSet= height/6
 
-        const { text, imges,redButton,yellowButton,greenButton,lightGreenButton,darkBlueButton,blueButton, pinkButton, blackButton, orangeButton } = this;
+        const { text, imges,redButton,yellowButton,greenButton,lightGreenButton,darkBlueButton,blueButton, pinkButton, blackButton, orangeButton, brownButton, whiteButton } = this;
         text.setFontSize(`${halfHeight * 0.15}px`);
         for (var j = 0; j < imges.length; j++) {
             imges[j].forEach(img => img.resize(width * 0.08, height * 0.08, 34, 1.00))//ajusta el tamano de los bloques
@@ -189,6 +202,15 @@ import { RestartButton } from '../../Button/restart-button.js';
 
         orangeButton.setPosition(width / 1.23, height * 0.15);
         scaleImage(orangeButton, width / 8, height / 2, 100, 1.5)
+
+        brownButton.setPosition(width / 1.23, height * 0.15);
+        scaleImage(brownButton, width / 8, height / 2, 100, 1.5)
+
+        whiteButton.setPosition(width / 1.23, height * 0.15);
+        scaleImage(whiteButton, width / 8, height / 2, 100, 1.5)
+
+
+
 
     }
 }
