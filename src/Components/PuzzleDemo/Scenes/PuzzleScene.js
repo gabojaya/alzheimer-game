@@ -23,6 +23,8 @@ export default class PuzzleScene extends Phaser.Scene {
         console.log(this.game.data)
     }
     preload() {
+
+        this.load.image('puzzlescenebk', '/Assets/GameScenes/PuzzleSbk.png')
         console.log("paso de cuenta abajo 1 " + this.countDown)
         this.load.image('red', '/Assets/New/1.png')
         this.load.image('blue', '/Assets/New/8.png')
@@ -52,13 +54,13 @@ export default class PuzzleScene extends Phaser.Scene {
         this.load.image('blackC', '/Assets/Cubos/0.png')
         this.load.image('orangeC', '/Assets/Cubos/2.png')
 
-        
 
-
-        //this.load.image("background", "../")
 
     }
     create() {
+        const puzzlePage = this.add.image(0, 0, 'puzzlescenebk').setOrigin(0, 0);
+        puzzlePage.displayWidth = this.sys.canvas.width;
+        puzzlePage.displayHeight = this.sys.canvas.height;
         this.text = this.add.text(0, 0,
             "Complete la figura seleccionando los colores deseados", {
             color: '#204659',
