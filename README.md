@@ -1,6 +1,29 @@
 # Sobre el Proyecto
-Juego para ayudar a personas con Ansaimer, por el momento tiene el nombre de "Camino Claro",
-Proyecto realizado por estudiantes de la Escuela Politécnica Nacional. Utiliza React, y Phaser como motor gráfico
+## Living Memory
+![image](https://github.com/user-attachments/assets/a5fc53d1-470b-4c89-be3a-37e069081e09)
+
+Living Memory es un juego diseñado para personas de la tercera edad con Alzheimer, con el objetivo de mejorar sus habilidades de orientación espacial y praxias visoconstructivas.  
+La orientación espacial ayuda a los pacientes a reconocer y relacionar los objetos en su entorno, mientras que las praxias visoconstructivas involucran la habilidad de organizar y manipular visualmente elementos, como el dibujar o completar formas. Estas actividades estimulan áreas cognitivas que tienden a verse afectadas en el Alzheimer, favoreciendo la autonomía y reduciendo la confusión en su vida diaria.
+
+La meta del juego es que los pacientes coloreen la parte faltante de un modelo presentado, bajo la supervisión de un psico-terapeuta. Desarrollado en JavaScript usando React para la interfaz de usuario y Phaser como motor gráfico, el proyecto permite a los terapeutas monitorizar el progreso de los pacientes, calculando una puntuación basada en los aciertos de color y el tiempo necesario para completar el intento.
+
+## Objetivos del Proyecto
+- Proporcionar una herramienta interactiva que contribuya a la estimulación cognitiva de personas con Alzheimer.
+- Permitir a los terapeutas supervisar el desempeño del paciente en el juego.
+- Medir el avance del paciente a través del tiempo y de los intentos registrados en el juego.
+
+## Herramientas y Tecnologías Utilizadas
+- JavaScript como lenguaje de programación principal.
+- React para la construcción de la interfaz de usuario, lo que permite una organización modular y reutilizable de los componentes.
+- Phaser como motor gráfico para el desarrollo de la lógica y los gráficos del juego.
+- Git para el control de versiones, utilizando dos ramas principales: main (versión estable) y develop (desarrollo activo), facilitando el trabajo colaborativo en equipo.
+
+## Estructura del Proyecto
+El proyecto está organizado en dos directorios principales:
+public: contiene archivos estáticos, como el index.html y elementos gráficos en la carpeta Assets.
+src: incluye la lógica y componentes del juego en Components, así como archivos principales como App.js e index.js para la estructura y configuración del proyecto.
+
+
 
 ## Available Scripts
 
