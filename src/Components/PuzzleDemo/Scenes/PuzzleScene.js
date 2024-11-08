@@ -1,7 +1,7 @@
 import Phaser from 'phaser'
-//import {matrixFill2} from '../Utils/DrawMatrix' // Circulo
-import {matrixFill2} from '../Utils/DrawMatrix1' // Flor
-//import {matrixFill2} from '../Utils/DrawMatrix2' // Estrella
+//import {matrixFill2} from '../Utils/DrawMatrixCircle' // Circulo
+import {matrixFill2} from '../Utils/DrawMatrixRose' // Flor
+//import {matrixFill2} from '../Utils/DrawMatrixStar' // Estrella
 import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
 
 
