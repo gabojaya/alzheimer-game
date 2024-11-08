@@ -10,8 +10,8 @@ export const matrixFill2 = (scene) => {
     scene.fila.push(new SquareElement(scene, 0, 0, 'transparente', false, scene.selectedColor,"transparente")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'blue', false, scene.selectedColor,"blue")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'red', false, scene.selectedColor,"red")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"blue")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"red")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"blue")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'transparente', false, scene.selectedColor,"transparente")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'transparente', false, scene.selectedColor,"transparente")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'transparente', false, scene.selectedColor,"transparente")) //1

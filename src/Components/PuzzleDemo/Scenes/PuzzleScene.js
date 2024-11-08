@@ -1,7 +1,7 @@
 import Phaser from 'phaser'
-//import {matrixFill2} from '../Utils/DrawMatrix' // Circulo
+import {matrixFill2} from '../Utils/DrawMatrix' // Circulo
 //import {matrixFill2} from '../Utils/DrawMatrix1' // Flor
-import {matrixFill2} from '../Utils/DrawMatrix2' // Estrella
+//import {matrixFill2} from '../Utils/DrawMatrix2' // Estrella
 import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
 import { RestartButton } from '../../Button/restart-button.js';
 
@@ -10,6 +10,7 @@ import { RestartButton } from '../../Button/restart-button.js';
     constructor() {
         super('Game');
         this.restartButton = new RestartButton(this);
+        this.score = 0; // variable para obtener el puntaje
     }
     init(data) {
         this.state = data.state;
@@ -60,6 +61,7 @@ import { RestartButton } from '../../Button/restart-button.js';
 
     }
     create() {
+        this.correctCount = 0;
         const puzzlePage = this.add.image(0, 0, 'puzzlescenebk').setOrigin(0, 0);
         puzzlePage.displayWidth = this.sys.canvas.width;
         puzzlePage.displayHeight = this.sys.canvas.height;
@@ -72,6 +74,11 @@ import { RestartButton } from '../../Button/restart-button.js';
         this.restartButton.setInteractive();
         this.restartButton.on('pointerdown', () => {
             this.scene.start('SummaryScene');
+        });
+
+        // Configura el botón "terminar" para que verifique el progreso y cambie de escena
+        this.restartButton.on('pointerdown', () => {
+        this.checkCompletion();
         });
         
         // Variable que guarda el color seleccionado
@@ -109,12 +116,31 @@ import { RestartButton } from '../../Button/restart-button.js';
         this.pinkButton.on('pointerdown', () => this.selectedColor = "pink");
         this.blackButton.on('pointerdown', () => this.selectedColor = "black");
         this.orangeButton.on('pointerdown', () => this.selectedColor = "orange");
+        
         matrixFill2(this)
 
         //Resize
         wrapResizeFn(this);
             
     }
+
+    checkCompletion() {
+        this.score = 0; // Asegura que el puntaje esté en 0 al inicio de la verificación
+    
+        this.imges.forEach((row) => {
+            row.forEach((square) => {
+                if (square.isEditable && square.getIsCorrectSelected()) {
+                    this.score++; // Incrementa el puntaje solo si el cuadro es correcto
+                }
+            });
+        });
+    
+        // Cambia a SummaryScene y asegura que el puntaje sea 0 si no hay aciertos
+        this.scene.start('SummaryScene', {
+            score: this.score || 0, // Usa 0 si `this.score` está `undefined`
+        });
+    }
+    
     //Funcion de resize a landscape de la scena
     resizeLandscape(width, height) {
         const halfWidth = width / 11.5;

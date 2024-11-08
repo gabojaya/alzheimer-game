@@ -13,7 +13,6 @@ class StartScene extends Phaser.Scene {
     }
 
     create() {
-        //this.add.image(400, 300, 'startpage');
         const startPage = this.add.image(0, 0, 'startpage').setOrigin(0, 0);
         startPage.displayWidth = this.sys.canvas.width;
         startPage.displayHeight = this.sys.canvas.height;
