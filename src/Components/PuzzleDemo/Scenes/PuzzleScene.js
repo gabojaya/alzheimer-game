@@ -123,13 +123,8 @@ import { RestartButton } from '../../Button/restart-button.js';
         this.pinkButton.on('pointerdown', () => this.selectedColor = "pink");
         this.blackButton.on('pointerdown', () => this.selectedColor = "black");
         this.orangeButton.on('pointerdown', () => this.selectedColor = "orange");
-<<<<<<< HEAD
-        
-=======
         this.brownButton.on('pointerdown', () => this.selectedColor = "brown");
         this.whiteButton.on('pointerdown', () => this.selectedColor = "white");
-
->>>>>>> d217609e823b22b8f9cb42e9d098ea67146ba807
         matrixFill2(this)
 
         //Resize
@@ -175,35 +170,35 @@ import { RestartButton } from '../../Button/restart-button.js';
 
 
         //seleccion del objeto cuadro
-        redButton.setPosition(width / 3.2, height * 0.15);
+        redButton.setPosition(width / 5, height * 0.15);
         scaleImage(redButton, width / 8, height / 2, 100,1.5)
 
 
-        yellowButton.setPosition(width / 2.66, height * 0.15);
+        yellowButton.setPosition(width / 3.8, height * 0.15);
         scaleImage(yellowButton, width / 8, height / 2, 100, 1.5)
 
-        greenButton.setPosition(width / 2.28, height * 0.15);
+        greenButton.setPosition(width / 3.12, height * 0.15);
         scaleImage(greenButton, width / 8, height / 2, 100, 1.5)
 
-        lightGreenButton.setPosition(width / 2.0, height * 0.15);
+        lightGreenButton.setPosition(width / 2.6, height * 0.15);
         scaleImage(lightGreenButton, width / 8, height / 2, 100, 1.5)
 
-        darkBlueButton.setPosition(width / 1.78, height * 0.15);
+        darkBlueButton.setPosition(width / 2.2, height * 0.15);
         scaleImage(darkBlueButton, width / 8, height / 2, 100, 1.5)
 
-        blueButton.setPosition(width / 1.6, height * 0.15);
+        blueButton.setPosition(width / 1.95, height * 0.15);
         scaleImage(blueButton, width / 8, height / 2, 100, 1.5)
 
-        pinkButton.setPosition(width / 1.45, height * 0.15);
+        pinkButton.setPosition(width / 1.75, height * 0.15);
         scaleImage(pinkButton, width / 8, height / 2, 100, 1.5)
 
-        blackButton.setPosition(width / 1.33, height * 0.15);
+        blackButton.setPosition(width / 1.55, height * 0.15);
         scaleImage(blackButton, width / 8, height / 2, 100, 1.5)
 
-        orangeButton.setPosition(width / 1.23, height * 0.15);
+        orangeButton.setPosition(width / 1.40, height * 0.15);
         scaleImage(orangeButton, width / 8, height / 2, 100, 1.5)
 
-        brownButton.setPosition(width / 1.23, height * 0.15);
+        brownButton.setPosition(width / 1.3, height * 0.15);
         scaleImage(brownButton, width / 8, height / 2, 100, 1.5)
 
         whiteButton.setPosition(width / 1.23, height * 0.15);
