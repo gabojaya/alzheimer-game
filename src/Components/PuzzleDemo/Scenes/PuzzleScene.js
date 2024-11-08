@@ -1,11 +1,10 @@
 import Phaser from 'phaser'
-//import {matrixFill2} from '../Utils/DrawMatrixCircle' // Circulo
-//import {matrixFill2} from '../Utils/DrawMatrixRose' // Flor
-//import {matrixFill2} from '../Utils/DrawMatrixStar' // Estrella
+//import {matrixFill2} from '../Utils/DrawMatrixCircle' 
+//import {matrixFill2} from '../Utils/DrawMatrixRose' 
+//import {matrixFill2} from '../Utils/DrawMatrixStar' 
+import {matrixFill2} from '../Utils/DrawMatrixBuho' 
 import { RestartButton } from '../../Button/restart-button.js';
 import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
-
-
 
  class PuzzleScene extends Phaser.Scene {
     constructor() {
