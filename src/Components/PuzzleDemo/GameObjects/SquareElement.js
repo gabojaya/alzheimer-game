@@ -18,6 +18,7 @@ export default class SquareElement extends Phaser.GameObjects.Container {
         this.blue=null
         this.pink=null
         this.black=null
+        this.orange=null
 
 
 
@@ -49,6 +50,7 @@ export default class SquareElement extends Phaser.GameObjects.Container {
         this.blue = new Phaser.GameObjects.Image(scene, x, y, 'blue').setOrigin(0.5, 0.5).setVisible(false).setScale(0.925)
         this.pink = new Phaser.GameObjects.Image(scene, x, y, 'pink').setOrigin(0.5, 0.5).setVisible(false).setScale(0.925)
         this.black = new Phaser.GameObjects.Image(scene, x, y, 'black').setOrigin(0.5, 0.5).setVisible(false).setScale(0.925)
+        this.orange = new Phaser.GameObjects.Image(scene, x, y, 'orange').setOrigin(0.5, 0.5).setVisible(false).setScale(0.925)
 
         if(this.isEditable){
             this.image.setInteractive({ useHandCursor: true }).on('pointerdown', () => {
@@ -76,7 +78,7 @@ export default class SquareElement extends Phaser.GameObjects.Container {
             })
         }
         
-        this.add([this.image, this.red, this.yellow, this.green, this.lightGreen, this.darkBlue, this.blue, this.pink, this.black]);
+        this.add([this.image, this.red, this.yellow, this.green, this.lightGreen, this.darkBlue, this.blue, this.pink, this.black, this.orange]);
 
         // Añadir `SquareElement` a la escena
         scene.add.existing(this);
@@ -93,6 +95,7 @@ export default class SquareElement extends Phaser.GameObjects.Container {
         this.blue.setScale(this.image.scale)
         this.pink.setScale(this.image.scale)
         this.black.setScale(this.image.scale)
+        this.orange.setScale(this.image.scale)
     }
     getIsCorrectSelected() {
         if (this.isEditable && (this.memorySelection === this.trueValue)) {
@@ -114,6 +117,7 @@ export default class SquareElement extends Phaser.GameObjects.Container {
                 this.blue.setVisible(false);
                 this.pink.setVisible(false);
                 this.black.setVisible(false);
+                this.orange.setVisible(false);
 
                 break;
             case "yellow":
@@ -125,6 +129,7 @@ export default class SquareElement extends Phaser.GameObjects.Container {
                 this.blue.setVisible(false);
                 this.pink.setVisible(false);
                 this.black.setVisible(false);
+                this.orange.setVisible(false);
 
                 break;
             case "green":
@@ -136,6 +141,7 @@ export default class SquareElement extends Phaser.GameObjects.Container {
                 this.blue.setVisible(false);
                 this.pink.setVisible(false);
                 this.black.setVisible(false);
+                this.orange.setVisible(false);
                 break;
             case "lightGreen":
                 this.red.setVisible(false);
@@ -146,6 +152,7 @@ export default class SquareElement extends Phaser.GameObjects.Container {
                 this.blue.setVisible(false);
                 this.pink.setVisible(false);
                 this.black.setVisible(false);
+                this.orange.setVisible(false);
 
                 break;
             case "darkBlue":
@@ -157,6 +164,7 @@ export default class SquareElement extends Phaser.GameObjects.Container {
                 this.blue.setVisible(false);
                 this.pink.setVisible(false);
                 this.black.setVisible(false);
+                this.orange.setVisible(false);
 
                 break;
             case "blue":
@@ -168,6 +176,7 @@ export default class SquareElement extends Phaser.GameObjects.Container {
                 this.blue.setVisible(true);
                 this.pink.setVisible(false);
                 this.black.setVisible(false);
+                this.orange.setVisible(false);
 
                 break;
             case "pink":
@@ -179,6 +188,7 @@ export default class SquareElement extends Phaser.GameObjects.Container {
                 this.blue.setVisible(false);
                 this.pink.setVisible(true);
                 this.black.setVisible(false);
+                this.orange.setVisible(false);
 
                 break;
             case "black":
@@ -190,6 +200,19 @@ export default class SquareElement extends Phaser.GameObjects.Container {
                 this.blue.setVisible(false);
                 this.pink.setVisible(false);
                 this.black.setVisible(true);
+                this.orange.setVisible(false);
+
+                break;
+            case "orange":
+                this.red.setVisible(false);
+                this.yellow.setVisible(false);
+                this.green.setVisible(false);
+                this.lightGreen.setVisible(false);
+                this.darkBlue.setVisible(false);
+                this.blue.setVisible(false);
+                this.pink.setVisible(false);
+                this.black.setVisible(false);
+                this.orange.setVisible(true);
 
                 break;
             default:
