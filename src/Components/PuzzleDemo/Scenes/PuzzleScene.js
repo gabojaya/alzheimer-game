@@ -1,13 +1,13 @@
 import Phaser from 'phaser'
 //import {matrixFill2} from '../Utils/DrawMatrix' // Circulo
-//import {matrixFill2} from '../Utils/DrawMatrix1' // Flor
-import {matrixFill2} from '../Utils/DrawMatrix2' // Estrella
+import {matrixFill2} from '../Utils/DrawMatrix1' // Flor
+//import {matrixFill2} from '../Utils/DrawMatrix2' // Estrella
 import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
 
 
 export default class PuzzleScene extends Phaser.Scene {
     constructor() {
-        super('bootGame');
+        super('Game');
     }
     init(data) {
         this.state = data.state;
