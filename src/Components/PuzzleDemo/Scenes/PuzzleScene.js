@@ -32,7 +32,6 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         this.load.image('red', '/Assets/New/1.png')
         this.load.image('blue', '/Assets/New/8.png')
         this.load.image('green', '/Assets/New/4.png')
-        this.load.image('white', '/Assets/New/13.png')
         this.load.image('border','/Assets/New/Borde.png')
         this.load.image('darkBlue', '/Assets/New/7.png')
         this.load.image('lightGreen', '/Assets/New/5.png')
@@ -48,9 +47,7 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         this.load.image('redC', '/Assets/Cubos/1.png')
         this.load.image('blueC', '/Assets/Cubos/8.png')
         this.load.image('greenC', '/Assets/Cubos/4.png')
-        this.load.image('whiteC', '/Assets/Cubos/13.png')
         this.load.image('borderC','/Assets/Cubos/Borde.png')
-
         this.load.image('darkBlueC', '/Assets/Cubos/7.png')
         this.load.image('lightGreenC', '/Assets/Cubos/5.png')
         this.load.image('pinkC', '/Assets/Cubos/12.png')
@@ -58,9 +55,6 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         this.load.image('blackC', '/Assets/Cubos/0.png')
         this.load.image('orangeC', '/Assets/Cubos/2.png')
         this.load.image('brownC', '/Assets/Cubos/17.png')
-        this.load.image('whiteC', '/Assets/Cubos/13.png')
-
-
 
     }
     create() {
@@ -96,7 +90,6 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         this.selectedColor = "orange";
         this.selectedColor = "black";
         this.selectedColor = "brown";
-        this.selectedColor = "white";
 
         // Configurar los botones para actualizar `selectedColor`
 
@@ -111,8 +104,6 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         this.blackButton = this.add.image(0, 0, 'blackC').setInteractive({ useHandCursor: true });
         this.orangeButton = this.add.image(0, 0, 'orangeC').setInteractive({ useHandCursor: true });
         this.brownButton = this.add.image(0, 0, 'brownC').setInteractive({ useHandCursor: true });
-        this.whiteButton = this.add.image(0, 0, 'whiteC').setInteractive({ useHandCursor: true });
-
 
         this.redButton.on('pointerdown', () => this.selectedColor = "red");
         this.yellowButton.on('pointerdown', () => this.selectedColor = "yellow");
@@ -124,7 +115,6 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         this.blackButton.on('pointerdown', () => this.selectedColor = "black");
         this.orangeButton.on('pointerdown', () => this.selectedColor = "orange");
         this.brownButton.on('pointerdown', () => this.selectedColor = "brown");
-        this.whiteButton.on('pointerdown', () => this.selectedColor = "white");
         
         matrixFill2(this)
 
@@ -157,7 +147,7 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         const halfHeight = height / 5;
         const yOffSet= height/6
 
-        const { text, imges,redButton,yellowButton,greenButton,lightGreenButton,darkBlueButton,blueButton, pinkButton, blackButton, orangeButton, brownButton, whiteButton } = this;
+        const { text, imges,redButton,yellowButton,greenButton,lightGreenButton,darkBlueButton,blueButton, pinkButton, blackButton, orangeButton, brownButton } = this;
         text.setFontSize(`${halfHeight * 0.15}px`);
         for (var j = 0; j < imges.length; j++) {
             imges[j].forEach(img => img.resize(width * 0.08, height * 0.08, 34, 1.00))//ajusta el tamano de los bloques
@@ -201,11 +191,6 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
 
         brownButton.setPosition(width / 1.32, height * 0.15);
         scaleImage(brownButton, width / 8, height / 2, 100, 1.5)
-
-        whiteButton.setPosition(width / 1.22, height * 0.15);
-        scaleImage(whiteButton, width / 8, height / 2, 100, 1.5)
-
-
 
 
     }

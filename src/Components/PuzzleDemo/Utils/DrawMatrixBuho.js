@@ -26,7 +26,7 @@ export const matrixFill2 = (scene) => {
     //Fila 2
     scene.fila.push(new SquareElement(scene, 0, 0, 'transparente', false, scene.selectedColor,"transparente")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'black', false, scene.selectedColor,"black")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'white', false, scene.selectedColor,"white")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'pink', false, scene.selectedColor,"pink")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'brown', false, scene.selectedColor,"brown")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'black', false, scene.selectedColor,"black")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'black', false, scene.selectedColor,"black")) //1
@@ -36,7 +36,7 @@ export const matrixFill2 = (scene) => {
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"black")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"black")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"brown")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"white")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"pink")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"black")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'transparente', false, scene.selectedColor,"transparente")) //1
     scene.imges.push(scene.fila)
@@ -45,7 +45,7 @@ export const matrixFill2 = (scene) => {
     //Fila 3 
     scene.fila.push(new SquareElement(scene, 0, 0, 'transparente', false, scene.selectedColor,"transparente")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'black', false, scene.selectedColor,"black")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'white', false, scene.selectedColor,"white")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'pink', false, scene.selectedColor,"pink")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'brown', false, scene.selectedColor,"brown")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'brown', false, scene.selectedColor,"brown")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'brown', false, scene.selectedColor,"brown")) //1
@@ -55,7 +55,7 @@ export const matrixFill2 = (scene) => {
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"brown")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"brown")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"brown")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"white")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"pink")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"black")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'transparente', false, scene.selectedColor,"transparente")) //1
     scene.imges.push(scene.fila)
@@ -83,17 +83,17 @@ export const matrixFill2 = (scene) => {
     //Fila 5
     scene.fila.push(new SquareElement(scene, 0, 0, 'black', false, scene.selectedColor,"black")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'black', false, scene.selectedColor,"black")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'white', false, scene.selectedColor,"white")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'blue', false, scene.selectedColor,"blue")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'black', false, scene.selectedColor,"black")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'white', false, scene.selectedColor,"white")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'blue', false, scene.selectedColor,"blue")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'black', false, scene.selectedColor,"black")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'brown', false, scene.selectedColor,"brown")) //1
     
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"brown")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"black")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"white")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"blue")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"black")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"white")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"blue")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"black")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"black")) //1
     scene.imges.push(scene.fila)
@@ -101,19 +101,19 @@ export const matrixFill2 = (scene) => {
 
     //Fila 6
     scene.fila.push(new SquareElement(scene, 0, 0, 'black', false, scene.selectedColor,"black")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'white', false, scene.selectedColor,"white")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'white', false, scene.selectedColor,"white")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'blue', false, scene.selectedColor,"blue")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'blue', false, scene.selectedColor,"blue")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'black', false, scene.selectedColor,"black")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'black', false, scene.selectedColor,"black")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'white', false, scene.selectedColor,"white")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'blue', false, scene.selectedColor,"blue")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'black', false, scene.selectedColor,"black")) //1
     
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"black")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"white")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"blue")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"black")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"black")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"white")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"white")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"blue")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"blue")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"black")) //1
     scene.imges.push(scene.fila)
     scene.fila = []
@@ -121,17 +121,17 @@ export const matrixFill2 = (scene) => {
     //Fila 7
     scene.fila.push(new SquareElement(scene, 0, 0, 'black', false, scene.selectedColor,"black")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'black', false, scene.selectedColor,"black")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'white', false, scene.selectedColor,"white")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'white', false, scene.selectedColor,"white")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'white', false, scene.selectedColor,"white")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'blue', false, scene.selectedColor,"blue")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'blue', false, scene.selectedColor,"blue")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'blue', false, scene.selectedColor,"blue")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'black', false, scene.selectedColor,"black")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'yellow', false, scene.selectedColor,"yellow")) //1
     
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"yellow")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"black")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"white")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"white")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"white")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"blue")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"blue")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"blue")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"black")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"black")) //1
     scene.imges.push(scene.fila)
@@ -201,9 +201,9 @@ export const matrixFill2 = (scene) => {
     scene.fila.push(new SquareElement(scene, 0, 0, 'darkBlue', false, scene.selectedColor,"darkBlue")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'red', false, scene.selectedColor,"red")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'red', false, scene.selectedColor,"red")) //1
-    scene.fila.push(new SquareElement(scene, 0, 0, 'white', false, scene.selectedColor,"white")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'pink', false, scene.selectedColor,"pink")) //1
 
-    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"white")) //1
+    scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"pink")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"red")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"red")) //1
     scene.fila.push(new SquareElement(scene, 0, 0, 'border', true, scene.selectedColor,"darkBlue")) //1
