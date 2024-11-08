@@ -1,9 +1,10 @@
 import Phaser from 'phaser'
-import {matrixFill2} from '../Utils/DrawMatrixCircle' // Circulo
+//import {matrixFill2} from '../Utils/DrawMatrixCircle' // Circulo
 //import {matrixFill2} from '../Utils/DrawMatrixRose' // Flor
 //import {matrixFill2} from '../Utils/DrawMatrixStar' // Estrella
-import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
 import { RestartButton } from '../../Button/restart-button.js';
+import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
+
 
 
  class PuzzleScene extends Phaser.Scene {
@@ -123,13 +124,7 @@ import { RestartButton } from '../../Button/restart-button.js';
         this.pinkButton.on('pointerdown', () => this.selectedColor = "pink");
         this.blackButton.on('pointerdown', () => this.selectedColor = "black");
         this.orangeButton.on('pointerdown', () => this.selectedColor = "orange");
-<<<<<<< HEAD
         
-=======
-        this.brownButton.on('pointerdown', () => this.selectedColor = "brown");
-        this.whiteButton.on('pointerdown', () => this.selectedColor = "white");
-
->>>>>>> d217609e823b22b8f9cb42e9d098ea67146ba807
         matrixFill2(this)
 
         //Resize
