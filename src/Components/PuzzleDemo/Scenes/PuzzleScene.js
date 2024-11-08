@@ -13,8 +13,7 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         this.score = 0; // variable para obtener el puntaje
     }
     init(data) {
-        this.state = data.state;
-        this.state2 = data.state2;
+        this.score = 0
         this.UserTime = data.time;
         if (this.UserTime === undefined) {
             this.UserTime = 0
@@ -69,9 +68,7 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         });
         this.restartButton = this.add.image(this.scale.width - 125, this.scale.height - 150, 'terminarButton');
         this.restartButton.setInteractive();
-        this.restartButton.on('pointerdown', () => {
-            this.scene.start('SummaryScene');
-        });
+
 
         // Configura el botón "terminar" para que verifique el progreso y cambie de escena
         this.restartButton.on('pointerdown', () => {
@@ -171,22 +168,22 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         greenButton.setPosition(width / 3.12, height * 0.15);
         scaleImage(greenButton, width / 8, height / 2, 100, 1.5)
 
-        lightGreenButton.setPosition(width / 2.62, height * 0.15);
+        lightGreenButton.setPosition(width / 2.25, height * 0.15);
         scaleImage(lightGreenButton, width / 8, height / 2, 100, 1.5)
 
-        darkBlueButton.setPosition(width / 2.25, height * 0.15);
+        darkBlueButton.setPosition(width / 2.62, height * 0.15);
         scaleImage(darkBlueButton, width / 8, height / 2, 100, 1.5)
 
         blueButton.setPosition(width / 1.98, height * 0.15);
         scaleImage(blueButton, width / 8, height / 2, 100, 1.5)
 
-        pinkButton.setPosition(width / 1.76, height * 0.15);
+        pinkButton.setPosition(width / 1.44, height * 0.15);
         scaleImage(pinkButton, width / 8, height / 2, 100, 1.5)
 
         blackButton.setPosition(width / 1.585, height * 0.15);
         scaleImage(blackButton, width / 8, height / 2, 100, 1.5)
 
-        orangeButton.setPosition(width / 1.44, height * 0.15);
+        orangeButton.setPosition(width / 1.76, height * 0.15);
         scaleImage(orangeButton, width / 8, height / 2, 100, 1.5)
 
         brownButton.setPosition(width / 1.32, height * 0.15);
