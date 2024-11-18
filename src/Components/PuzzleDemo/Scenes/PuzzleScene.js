@@ -26,7 +26,7 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
     }
     preload() {
         this.load.image('terminarButton', '/Assets/Button/terminar.png');
-        this.load.image('puzzlescenebk', '/Assets/GameScenes/PuzzleSbk.png')
+        this.load.image('puzzlescenebk', '/Assets/GameScenes/PuzzleSbkEnBlanco.png')
         console.log("paso de cuenta abajo 1 " + this.countDown)
         this.load.image('red', '/Assets/New/1.png')
         this.load.image('blue', '/Assets/New/8.png')
@@ -62,11 +62,11 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         puzzlePage.displayWidth = this.sys.canvas.width;
         puzzlePage.displayHeight = this.sys.canvas.height;
         this.text = this.add.text(0, 0,
-            "Complete la figura seleccionando los colores deseados", {
-            color: '#204659',
-            align: 'justify',
+            "Complete la figura seleccionando\nlos colores deseados", {
+            color: '#000000',
+            
         });
-        this.restartButton = this.add.image(this.scale.width - 125, this.scale.height - 150, 'terminarButton');
+        this.restartButton = this.add.image(this.scale.width - 115, this.scale.height - 60, 'terminarButton');
         this.restartButton.setInteractive();
 
 
@@ -83,10 +83,10 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         this.selectedColor = "darkBlue";
         this.selectedColor = "blue";
         this.selectedColor = "pink";
-        this.selectedColor = "trasnparente";
         this.selectedColor = "orange";
         this.selectedColor = "black";
         this.selectedColor = "brown";
+        this.selectedColor = "trasnparente";
 
         // Configurar los botones para actualizar `selectedColor`
 
@@ -140,12 +140,13 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
     //Funcion de resize a landscape de la scena
     resizeLandscape(width, height) {
         const halfWidth = width / 11.5;
-        const xOffset= width/10;
+        const xOffset= width/3;
         const halfHeight = height / 5;
-        const yOffSet= height/6
+        const yOffSet= height/20
 
         const { text, imges,redButton,yellowButton,greenButton,lightGreenButton,darkBlueButton,blueButton, pinkButton, blackButton, orangeButton, brownButton } = this;
-        text.setFontSize(`${halfHeight * 0.15}px`);
+        text.setFontSize(`${halfHeight * 0.2}px`);
+        
         for (var j = 0; j < imges.length; j++) {
             imges[j].forEach(img => img.resize(width * 0.08, height * 0.08, 34, 1.00))//ajusta el tamano de los bloques
             // eslint-disable-next-line 
@@ -153,41 +154,42 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
             imges[j].forEach((img, index) => img.setPosition(xOffset+ halfWidth * 0.255 * (index + 10), yOffSet+(halfHeight/4 * (j + 2))))//ajustar en funcion de la posicion...
         }
 
-        text.setPosition(width / 3.5, height * 0.03);
+        text.setPosition(width / 20, height * 0.02);
         text.setWordWrapWidth(width * 0.8);
 
 
         //seleccion del objeto cuadro
-        redButton.setPosition(width / 5, height * 0.15);
-        scaleImage(redButton, width / 8, height / 2, 100,1.5)
+        redButton.setPosition(width / 7, height * 0.2);
+        scaleImage(redButton, width / 8, height / 2, 100, 2)
 
+        yellowButton.setPosition(width / 3.8, height * 0.2);
+        scaleImage(yellowButton, width / 8, height / 2, 100, 2)
 
-        yellowButton.setPosition(width / 3.85, height * 0.15);
-        scaleImage(yellowButton, width / 8, height / 2, 100, 1.5)
+        greenButton.setPosition(width / 7, height * 0.38);
+        scaleImage(greenButton, width / 8, height / 2, 100, 2)
+        
+        darkBlueButton.setPosition(width / 3.8, height * 0.38);
+        scaleImage(darkBlueButton, width / 8, height / 2, 100, 2)
+        
+        orangeButton.setPosition(width / 7, height * 0.56);
+        scaleImage(orangeButton, width / 8, height / 2, 100, 2)
 
-        greenButton.setPosition(width / 3.12, height * 0.15);
-        scaleImage(greenButton, width / 8, height / 2, 100, 1.5)
+        pinkButton.setPosition(width / 3.8, height * 0.56);
+        scaleImage(pinkButton, width / 8, height / 2, 100, 2)
 
-        lightGreenButton.setPosition(width / 2.25, height * 0.15);
-        scaleImage(lightGreenButton, width / 8, height / 2, 100, 1.5)
-
-        darkBlueButton.setPosition(width / 2.62, height * 0.15);
-        scaleImage(darkBlueButton, width / 8, height / 2, 100, 1.5)
-
-        blueButton.setPosition(width / 1.98, height * 0.15);
-        scaleImage(blueButton, width / 8, height / 2, 100, 1.5)
-
-        pinkButton.setPosition(width / 1.44, height * 0.15);
-        scaleImage(pinkButton, width / 8, height / 2, 100, 1.5)
-
-        blackButton.setPosition(width / 1.585, height * 0.15);
-        scaleImage(blackButton, width / 8, height / 2, 100, 1.5)
-
-        orangeButton.setPosition(width / 1.76, height * 0.15);
-        scaleImage(orangeButton, width / 8, height / 2, 100, 1.5)
-
-        brownButton.setPosition(width / 1.32, height * 0.15);
-        scaleImage(brownButton, width / 8, height / 2, 100, 1.5)
+        blueButton.setPosition(width / 7, height * 0.74);
+        scaleImage(blueButton, width / 8, height / 2, 100, 2)
+        
+        brownButton.setPosition(width / 3.8, height * 0.74);
+        scaleImage(brownButton, width / 8, height / 2, 100, 2)
+        
+        blackButton.setPosition(width / 7, height * 0.92);
+        scaleImage(blackButton, width / 8, height / 2, 100, 2)
+        
+        lightGreenButton.setPosition(width / 3.8, height * 0.92);
+        scaleImage(lightGreenButton, width / 8, height / 2, 100, 2)
+        
+        scaleImage(this.restartButton, this.scale.width / 5, this.scale.height / 5, 100, 2.3); // Ajusta el tamaño con escala
 
 
     }
