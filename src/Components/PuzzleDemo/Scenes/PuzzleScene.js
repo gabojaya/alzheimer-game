@@ -2,11 +2,11 @@ import Phaser from 'phaser'
 //import {matrixFill2} from '../Utils/DrawMatrixCircle' 
 //import {matrixFill2} from '../Utils/DrawMatrixRose' 
 //import {matrixFill2} from '../Utils/DrawMatrixStar' 
-import {matrixFill2} from '../Utils/DrawMatrixBuho' 
+import { matrixFill2 } from '../Utils/DrawMatrixBuho'
 import { RestartButton } from '../../Button/restart-button.js';
-import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
+import { scaleImage, wrapResizeFn } from '../Utils/Resize';
 
- class PuzzleScene extends Phaser.Scene {
+class PuzzleScene extends Phaser.Scene {
     constructor() {
         super('Game');
         this.restartButton = new RestartButton(this);
@@ -31,14 +31,14 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         this.load.image('red', '/Assets/New/1.png')
         this.load.image('blue', '/Assets/New/8.png')
         this.load.image('green', '/Assets/New/4.png')
-        this.load.image('border','/Assets/New/Borde.png')
+        this.load.image('border', '/Assets/New/Borde.png')
         this.load.image('darkBlue', '/Assets/New/7.png')
         this.load.image('lightGreen', '/Assets/New/5.png')
         this.load.image('pink', '/Assets/New/12.png')
         this.load.image('yellow', '/Assets/New/3.png')
         this.load.image('orange', '/Assets/New/2.png')
-        this.load.image('black','/Assets/New/0.png')
-        this.load.image('brown','/Assets/New/17.png')
+        this.load.image('black', '/Assets/New/0.png')
+        this.load.image('brown', '/Assets/New/17.png')
         this.load.image('transparente', '/Assets/New/Transparente.png')
 
 
@@ -46,7 +46,7 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         this.load.image('redC', '/Assets/Cubos/1.png')
         this.load.image('blueC', '/Assets/Cubos/8.png')
         this.load.image('greenC', '/Assets/Cubos/4.png')
-        this.load.image('borderC','/Assets/Cubos/Borde.png')
+        this.load.image('borderC', '/Assets/Cubos/Borde.png')
         this.load.image('darkBlueC', '/Assets/Cubos/7.png')
         this.load.image('lightGreenC', '/Assets/Cubos/5.png')
         this.load.image('pinkC', '/Assets/Cubos/12.png')
@@ -64,7 +64,7 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         this.text = this.add.text(0, 0,
             "Complete la figura seleccionando\nlos colores deseados", {
             color: '#000000',
-            
+
         });
         this.restartButton = this.add.image(this.scale.width - 115, this.scale.height - 60, 'terminarButton');
         this.restartButton.setInteractive();
@@ -72,9 +72,9 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
 
         // Configura el botón "terminar" para que verifique el progreso y cambie de escena
         this.restartButton.on('pointerdown', () => {
-        this.checkCompletion();
+            this.checkCompletion();
         });
-        
+
         // Variable que guarda el color seleccionado
         this.selectedColor = "red";
         this.selectedColor = "yellow";
@@ -112,17 +112,17 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         this.blackButton.on('pointerdown', () => this.selectedColor = "black");
         this.orangeButton.on('pointerdown', () => this.selectedColor = "orange");
         this.brownButton.on('pointerdown', () => this.selectedColor = "brown");
-        
+
         matrixFill2(this)
 
         //Resize
         wrapResizeFn(this);
-            
+
     }
 
     checkCompletion() {
         this.score = 0; // Asegura que el puntaje esté en 0 al inicio de la verificación
-    
+
         this.imges.forEach((row) => {
             row.forEach((square) => {
                 if (square.isEditable && square.getIsCorrectSelected()) {
@@ -130,69 +130,69 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
                 }
             });
         });
-    
+
         // Cambia a SummaryScene y asegura que el puntaje sea 0 si no hay aciertos
         this.scene.start('SummaryScene', {
             score: this.score || 0, // Usa 0 si `this.score` está `undefined`
         });
     }
-    
+
     //Funcion de resize a landscape de la scena
     resizeLandscape(width, height) {
-        const halfWidth = width / 11.5;
-        const xOffset= width/3;
-        const halfHeight = height / 5;
-        const yOffSet= height/20
+        // Tamaño fijo para cada cubo (independiente de la resolución)
+        const cubeSize = Math.min(width, height) / 9;  // Tamaño mínimo para evitar distorsión en pantallas grandes
 
-        const { text, imges,redButton,yellowButton,greenButton,lightGreenButton,darkBlueButton,blueButton, pinkButton, blackButton, orangeButton, brownButton } = this;
-        text.setFontSize(`${halfHeight * 0.2}px`);
-        
-        for (var j = 0; j < imges.length; j++) {
-            imges[j].forEach(img => img.resize(width * 0.08, height * 0.08, 34, 1.00))//ajusta el tamano de los bloques
-            // eslint-disable-next-line 
-            //                                                                    0.27     
-            imges[j].forEach((img, index) => img.setPosition(xOffset+ halfWidth * 0.255 * (index + 10), yOffSet+(halfHeight/4 * (j + 2))))//ajustar en funcion de la posicion...
-        }
+        // Ajuste de márgenes y espacio entre elementos
+        const xOffset = width *0.5;
+        const yOffset = height / 10;
+        const horizontalSpacing = width *0.025;
+        const verticalSpacing = height* 0.05;
 
+        const { text, imges, redButton, yellowButton, greenButton, lightGreenButton, darkBlueButton, blueButton, pinkButton, blackButton, orangeButton, brownButton, restartButton } = this;
+
+        // Ajustar texto
+        text.setFontSize(`${height / 20}px`); // Ajuste del tamaño de texto proporcional a la altura
         text.setPosition(width / 20, height * 0.02);
         text.setWordWrapWidth(width * 0.8);
 
+        // Ajustar imágenes de los cubos
+        imges.forEach((row, rowIndex) => {
+            row.forEach((img, colIndex) => {
+                img.resize(cubeSize, cubeSize, 40, 1.0);  // Tamaño uniforme para los cubos
+                img.setPosition(
+                    xOffset + colIndex * horizontalSpacing,
+                    yOffset + rowIndex * verticalSpacing
+                );
+            });
+        });
 
-        //seleccion del objeto cuadro
-        redButton.setPosition(width / 7, height * 0.2);
-        scaleImage(redButton, width / 8, height / 2, 100, 2)
+        // Función para configurar botones con márgenes consistentes
+        const configureButton = (button, xPositionFactor, yPositionFactor) => {
+            const buttonWidth = width / 8;
+            const buttonHeight = height / 10;
+            button.setPosition(width * xPositionFactor, height * yPositionFactor);
+            scaleImage(button, buttonWidth, buttonHeight, 100, 2);
+        };
 
-        yellowButton.setPosition(width / 3.8, height * 0.2);
-        scaleImage(yellowButton, width / 8, height / 2, 100, 2)
+        // Configuración de botones con posiciones fijas
+        configureButton(redButton, 1 / 7, 0.2);
+        configureButton(yellowButton, 1 / 3.8, 0.2);
+        configureButton(greenButton, 1 / 7, 0.38);
+        configureButton(darkBlueButton, 1 / 3.8, 0.38);
+        configureButton(orangeButton, 1 / 7, 0.56);
+        configureButton(pinkButton, 1 / 3.8, 0.56);
+        configureButton(blueButton, 1 / 7, 0.74);
+        configureButton(brownButton, 1 / 3.8, 0.74);
+        configureButton(blackButton, 1 / 7, 0.92);
+        configureButton(lightGreenButton, 1 / 3.8, 0.92);
 
-        greenButton.setPosition(width / 7, height * 0.38);
-        scaleImage(greenButton, width / 8, height / 2, 100, 2)
-        
-        darkBlueButton.setPosition(width / 3.8, height * 0.38);
-        scaleImage(darkBlueButton, width / 8, height / 2, 100, 2)
-        
-        orangeButton.setPosition(width / 7, height * 0.56);
-        scaleImage(orangeButton, width / 8, height / 2, 100, 2)
-
-        pinkButton.setPosition(width / 3.8, height * 0.56);
-        scaleImage(pinkButton, width / 8, height / 2, 100, 2)
-
-        blueButton.setPosition(width / 7, height * 0.74);
-        scaleImage(blueButton, width / 8, height / 2, 100, 2)
-        
-        brownButton.setPosition(width / 3.8, height * 0.74);
-        scaleImage(brownButton, width / 8, height / 2, 100, 2)
-        
-        blackButton.setPosition(width / 7, height * 0.92);
-        scaleImage(blackButton, width / 8, height / 2, 100, 2)
-        
-        lightGreenButton.setPosition(width / 3.8, height * 0.92);
-        scaleImage(lightGreenButton, width / 8, height / 2, 100, 2)
-        
-        scaleImage(this.restartButton, this.scale.width / 5, this.scale.height / 5, 100, 2.3); // Ajusta el tamaño con escala
-
-
+        // Ajustar botón de reinicio
+        scaleImage(restartButton, width / 5, height / 5, 100, 2.3);
     }
+
+
+
+
 }
 
 export default PuzzleScene;
