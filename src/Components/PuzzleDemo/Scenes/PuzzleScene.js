@@ -135,23 +135,20 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
     
     //Funcion de resize a landscape de la scena
     resizeLandscape(width, height) {
-        // Tamaño fijo para cada cubo (independiente de la resolución)
-        const cubeSize = Math.min(width, height) *1;  // Tamaño mínimo para evitar distorsión en pantallas grandes
+        // Tamaño dinámico para los cubos basado en el ancho y alto de la pantalla
+        const cubeSize = Math.min(width, height) * 0.11; // Tamaño relativo
+        const horizontalSpacing = cubeSize * 0.58; // Espaciado horizontal dinámico
+        const verticalSpacing = cubeSize * 0.585; // Espaciado vertical dinámico
+        const xOffset = (width - horizontalSpacing * (this.imges[0].length - 1)) / 1.5; // Centrar los cubos
+        const yOffset = height * 0.1; // Margen superior dinámico
     
-        // Ajuste de márgenes y espacio entre elementos
-        const xOffset = width * 0.5;
-        const yOffset = height *0.1;
-        const horizontalSpacing = width *0.03;
-        const verticalSpacing = height*0.0624;
+        const { imges, restartButton, redButton, yellowButton, greenButton, lightGreenButton, darkBlueButton, blueButton, pinkButton, blackButton, orangeButton, brownButton } = this;
     
-        const {imges, redButton, yellowButton, greenButton, lightGreenButton, darkBlueButton, blueButton, pinkButton, blackButton, orangeButton, brownButton, restartButton } = this;
-    
-    
-        // Ajustar imágenes de los cubos
+        // Ajustar posiciones y tamaño de los cubos
         imges.forEach((row, rowIndex) => {
-            row.forEach((img, colIndex) => {
-                img.resize(cubeSize, cubeSize, 0, 0.6);  // Tamaño uniforme para los cubos
-                img.setPosition(
+            row.forEach((cube, colIndex) => {
+                cube.resize(cubeSize, cubeSize, 0, 0.6); // Ajustar escala
+                cube.setPosition(
                     xOffset + colIndex * horizontalSpacing,
                     yOffset + rowIndex * verticalSpacing
                 );
@@ -159,27 +156,28 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         });
     
         // Función para configurar botones con márgenes consistentes
-        const configureButton = (button, xPositionFactor, yPositionFactor) => {
-            const buttonWidth = width / 8;
-            const buttonHeight = height / 10;
-            button.setPosition(width * xPositionFactor, height * yPositionFactor);
-            scaleImage(button, buttonWidth, buttonHeight, 100, 2);
+        const configureButton = (button, xFactor, yFactor) => {
+            const buttonWidth = cubeSize * 1.5; // Escala proporcional a los cubos
+            const buttonHeight = cubeSize * 1.5;
+            button.setPosition(width * xFactor, height * yFactor);
+            scaleImage(button, buttonWidth, buttonHeight, 10, 1); // Ajustar tamaño del botón
         };
     
-        // Configuración de botones con posiciones fijas
-        configureButton(redButton, 1 / 7, 0.2);
-        configureButton(yellowButton, 1 / 3.8, 0.2);
-        configureButton(greenButton, 1 / 7, 0.38);
-        configureButton(darkBlueButton, 1 / 3.8, 0.38);
-        configureButton(orangeButton, 1 / 7, 0.56);
-        configureButton(pinkButton, 1 / 3.8, 0.56);
-        configureButton(blueButton, 1 / 7, 0.74);
-        configureButton(brownButton, 1 / 3.8, 0.74);
-        configureButton(blackButton, 1 / 7, 0.92);
-        configureButton(lightGreenButton, 1 / 3.8, 0.92);
+        // Posicionar los botones de colores de forma dinámica
+        configureButton(redButton, 0.1, 0.2);
+        configureButton(yellowButton, 0.2, 0.2);
+        configureButton(greenButton, 0.1, 0.35);
+        configureButton(lightGreenButton, 0.2, 0.35);
+        configureButton(darkBlueButton, 0.1, 0.5);
+        configureButton(blueButton, 0.2, 0.5);
+        configureButton(pinkButton, 0.1, 0.65);
+        configureButton(orangeButton, 0.2, 0.65);
+        configureButton(blackButton, 0.1, 0.8);
+        configureButton(brownButton, 0.2, 0.8);
     
-        // Ajustar botón de reinicio
-        scaleImage(restartButton, width / 5, height / 5, 100, 2.3);
+        // Ajustar el botón "terminar"
+        scaleImage(restartButton, cubeSize * 2, cubeSize * 2, 20, 1); // Escala proporcional
+        restartButton.setPosition(width - (cubeSize * 2), height - (cubeSize * 2));
     }
     
 

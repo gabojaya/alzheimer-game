@@ -61,13 +61,15 @@ export default class SquareElement extends Phaser.GameObjects.Container {
                 this.setSpriteActive(this.scene.selectedColor)
                 
             }).on('pointerover', () => {
+                
                 scene.tweens.add({
                     targets: this,
                     scale: 1.1,
                     ease: 'Power3',
                     duration: 150,
                     delay: 0,
-                    repeat: 0,
+                    repeat: 0
+                    
                 });
             }).on('pointerout', () => {
                 scene.tweens.add({
@@ -76,7 +78,7 @@ export default class SquareElement extends Phaser.GameObjects.Container {
                     ease: 'Power3',
                     duration: 150,
                     delay: 0,
-                    repeat: 0,
+                    repeat: 0
                 });
     
             })
