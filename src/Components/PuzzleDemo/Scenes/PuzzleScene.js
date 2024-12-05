@@ -137,8 +137,8 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
     resizeLandscape(width, height) {
         // Tamaño dinámico para los cubos basado en el ancho y alto de la pantalla
         const cubeSize = Math.min(width, height) * 0.11; // Tamaño relativo
-        const horizontalSpacing = cubeSize * 0.58; // Espaciado horizontal dinámico
-        const verticalSpacing = cubeSize * 0.585; // Espaciado vertical dinámico
+        const horizontalSpacing = cubeSize * 0.582; // Espaciado horizontal dinámico
+        const verticalSpacing = cubeSize * 0.5833; // Espaciado vertical dinámico
         const xOffset = (width - horizontalSpacing * (this.imges[0].length - 1)) / 1.5; // Centrar los cubos
         const yOffset = height * 0.1; // Margen superior dinámico
     
