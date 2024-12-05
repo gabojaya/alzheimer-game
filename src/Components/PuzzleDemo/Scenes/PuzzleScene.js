@@ -61,11 +61,7 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         const puzzlePage = this.add.image(0, 0, 'puzzlescenebk').setOrigin(0, 0);
         puzzlePage.displayWidth = this.sys.canvas.width;
         puzzlePage.displayHeight = this.sys.canvas.height;
-        this.text = this.add.text(0, 0,
-            "Complete la figura seleccionando\nlos colores deseados", {
-            color: '#000000',
-            
-        });
+        
         this.restartButton = this.add.image(this.scale.width - 115, this.scale.height - 60, 'terminarButton');
         this.restartButton.setInteractive();
 
@@ -139,60 +135,57 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
     
     //Funcion de resize a landscape de la scena
     resizeLandscape(width, height) {
-        const halfWidth = width / 11.5;
-        const xOffset= width/3;
-        const halfHeight = height / 5;
-        const yOffSet= height/20
-
-        const { text, imges,redButton,yellowButton,greenButton,lightGreenButton,darkBlueButton,blueButton, pinkButton, blackButton, orangeButton, brownButton } = this;
-        text.setFontSize(`${halfHeight * 0.2}px`);
-        
-        for (var j = 0; j < imges.length; j++) {
-            imges[j].forEach(img => img.resize(width * 0.08, height * 0.08, 34, 1.00))//ajusta el tamano de los bloques
-            // eslint-disable-next-line 
-            //                                                                    0.27     
-            imges[j].forEach((img, index) => img.setPosition(xOffset+ halfWidth * 0.255 * (index + 10), yOffSet+(halfHeight/4 * (j + 2))))//ajustar en funcion de la posicion...
-        }
-
-        text.setPosition(width / 20, height * 0.02);
-        text.setWordWrapWidth(width * 0.8);
-
-
-        //seleccion del objeto cuadro
-        redButton.setPosition(width / 7, height * 0.2);
-        scaleImage(redButton, width / 8, height / 2, 100, 2)
-
-        yellowButton.setPosition(width / 3.8, height * 0.2);
-        scaleImage(yellowButton, width / 8, height / 2, 100, 2)
-
-        greenButton.setPosition(width / 7, height * 0.38);
-        scaleImage(greenButton, width / 8, height / 2, 100, 2)
-        
-        darkBlueButton.setPosition(width / 3.8, height * 0.38);
-        scaleImage(darkBlueButton, width / 8, height / 2, 100, 2)
-        
-        orangeButton.setPosition(width / 7, height * 0.56);
-        scaleImage(orangeButton, width / 8, height / 2, 100, 2)
-
-        pinkButton.setPosition(width / 3.8, height * 0.56);
-        scaleImage(pinkButton, width / 8, height / 2, 100, 2)
-
-        blueButton.setPosition(width / 7, height * 0.74);
-        scaleImage(blueButton, width / 8, height / 2, 100, 2)
-        
-        brownButton.setPosition(width / 3.8, height * 0.74);
-        scaleImage(brownButton, width / 8, height / 2, 100, 2)
-        
-        blackButton.setPosition(width / 7, height * 0.92);
-        scaleImage(blackButton, width / 8, height / 2, 100, 2)
-        
-        lightGreenButton.setPosition(width / 3.8, height * 0.92);
-        scaleImage(lightGreenButton, width / 8, height / 2, 100, 2)
-        
-        scaleImage(this.restartButton, this.scale.width / 5, this.scale.height / 5, 100, 2.3); // Ajusta el tamaño con escala
-
-
+        // Tamaño fijo para cada cubo (independiente de la resolución)
+        const cubeSize = Math.min(width, height) *1;  // Tamaño mínimo para evitar distorsión en pantallas grandes
+    
+        // Ajuste de márgenes y espacio entre elementos
+        const xOffset = width * 0.5;
+        const yOffset = height *0.1;
+        const horizontalSpacing = width *0.03;
+        const verticalSpacing = height*0.0624;
+    
+        const {imges, redButton, yellowButton, greenButton, lightGreenButton, darkBlueButton, blueButton, pinkButton, blackButton, orangeButton, brownButton, restartButton } = this;
+    
+    
+        // Ajustar imágenes de los cubos
+        imges.forEach((row, rowIndex) => {
+            row.forEach((img, colIndex) => {
+                img.resize(cubeSize, cubeSize, 0, 0.6);  // Tamaño uniforme para los cubos
+                img.setPosition(
+                    xOffset + colIndex * horizontalSpacing,
+                    yOffset + rowIndex * verticalSpacing
+                );
+            });
+        });
+    
+        // Función para configurar botones con márgenes consistentes
+        const configureButton = (button, xPositionFactor, yPositionFactor) => {
+            const buttonWidth = width / 8;
+            const buttonHeight = height / 10;
+            button.setPosition(width * xPositionFactor, height * yPositionFactor);
+            scaleImage(button, buttonWidth, buttonHeight, 100, 2);
+        };
+    
+        // Configuración de botones con posiciones fijas
+        configureButton(redButton, 1 / 7, 0.2);
+        configureButton(yellowButton, 1 / 3.8, 0.2);
+        configureButton(greenButton, 1 / 7, 0.38);
+        configureButton(darkBlueButton, 1 / 3.8, 0.38);
+        configureButton(orangeButton, 1 / 7, 0.56);
+        configureButton(pinkButton, 1 / 3.8, 0.56);
+        configureButton(blueButton, 1 / 7, 0.74);
+        configureButton(brownButton, 1 / 3.8, 0.74);
+        configureButton(blackButton, 1 / 7, 0.92);
+        configureButton(lightGreenButton, 1 / 3.8, 0.92);
+    
+        // Ajustar botón de reinicio
+        scaleImage(restartButton, width / 5, height / 5, 100, 2.3);
     }
+    
+
+
+
+
 }
 
 export default PuzzleScene;
