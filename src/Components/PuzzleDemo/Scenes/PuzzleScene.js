@@ -13,6 +13,8 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
         this.score = 0; // variable para obtener el puntaje
     }
     init(data) {
+        document.body.style.zoom = "80%"; 
+        
         this.score = 0
         this.UserTime = data.time;
         if (this.UserTime === undefined) {
@@ -136,6 +138,7 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
     //Funcion de resize a landscape de la scena
     resizeLandscape(width, height) {
         // Tamaño dinámico para los cubos basado en el ancho y alto de la pantalla
+        document.body.style.zoom = "100%";  // Establece el zoom a 100%
         const cubeSize = Math.min(width, height) * 0.11; // Tamaño relativo
         const horizontalSpacing = cubeSize * 0.5833; // Espaciado horizontal dinámico
         const verticalSpacing = cubeSize * 0.5833; // Espaciado vertical dinámico

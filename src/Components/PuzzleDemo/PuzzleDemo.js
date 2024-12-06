@@ -25,7 +25,7 @@ class PuzzleDemo extends Component {
                 mode: Phaser.Scale.FIT,
                 height: document.documentElement.clientHeight * DPR,
                 width: document.documentElement.clientWidth * DPR,
-                zoom: 1 / DPR,
+                zoom: 0.8,
                 pixelArt: false,
                 antialias: true,
             }
