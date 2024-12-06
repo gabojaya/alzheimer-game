@@ -56,33 +56,45 @@ export default class SquareElement extends Phaser.GameObjects.Container {
         this.brown = new Phaser.GameObjects.Image(scene, x, y, 'brown').setOrigin(0.5, 0.5).setVisible(false).setScale(0.925)
         this.white = new Phaser.GameObjects.Image(scene, x, y, 'white').setOrigin(0.5, 0.5).setVisible(false).setScale(0.925)
 
-        if(this.isEditable){
-            this.image.setInteractive({ useHandCursor: true }).on('pointerdown', () => {
-                this.setSpriteActive(this.scene.selectedColor)
-                
-            }).on('pointerover', () => {
-                
-                scene.tweens.add({
-                    targets: this,
-                    scale: 1.3,
-                    ease: 'Power3',
-                    duration: 150,
-                    delay: 0,
-                    repeat: 0
-                    
-                });
-            }).on('pointerout', () => {
-                scene.tweens.add({
-                    targets: this,
-                    scale: 1,
-                    ease: 'Power3',
-                    duration: 150,
-                    delay: 0,
-                    repeat: 0
-                });
-    
-            })
-        }
+        if (this.isEditable) {
+    // Establecer la profundidad inicial (asegúrate de que los cubos no se superpongan)
+    this.setDepth(0);
+
+    this.image.setInteractive({ useHandCursor: true })
+        .on('pointerdown', () => {
+            this.setSpriteActive(this.scene.selectedColor);
+        })
+        .on('pointerover', () => {
+            // Cambiar la profundidad para que se sobresalga
+            this.setDepth(10);
+
+            // Añadir un tweener para el efecto de agrandar
+            scene.tweens.add({
+                targets: this,
+                scale: 1.3,
+                ease: 'Power3',
+                duration: 100,
+                delay: 0,
+                repeat: 0
+            });
+        })
+        .on('pointerout', () => {
+            // Volver al tamaño original con tweener
+            scene.tweens.add({
+                targets: this,
+                scale: 1,
+                ease: 'Power3',
+                duration: 150,
+                delay: 0,
+                repeat: 0,
+                onComplete: () => {
+                    // Restaurar la profundidad original
+                    this.setDepth(0);
+                }
+            });
+        });
+}
+
         
         this.add([this.image, this.red, this.yellow, this.green, this.lightGreen, this.darkBlue, this.blue, this.pink, this.black, this.orange, this.brown, this.white]);
 
