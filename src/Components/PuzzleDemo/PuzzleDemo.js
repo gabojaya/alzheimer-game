@@ -22,10 +22,12 @@ class PuzzleDemo extends Component {
                 [StartScene, PuzzleScene, SummaryScene],
             scale: {
                 parent: 'phaser-game',
-                mode: Phaser.Scale.NONE,
+                mode: Phaser.Scale.FIT,
                 height: document.documentElement.clientHeight * DPR,
                 width: document.documentElement.clientWidth * DPR,
-                zoom: 1 / DPR
+                zoom: 1 / DPR,
+                pixelArt: false,
+                antialias: true,
             }
         };
         this.game = new Phaser.Game(config)
@@ -38,7 +40,7 @@ class PuzzleDemo extends Component {
             player_id: 1
         }
 
-
+        
 
     }
     handleClose = () => {
@@ -56,10 +58,15 @@ class PuzzleDemo extends Component {
     }
 
     render() {
-        const width = `${document.documentElement.clientWidth}px`;
-        const height = `${document.documentElement.clientHeight}px`;
-        return <div id="phaser-game"
-            style={{ width, height, backgroundColor: "black" }} />;
+        const style = {
+            width: '100vw', // Usar viewport width/height
+            height: '100vh',
+            backgroundColor: "black",
+            display: "flex", // Opcional: Para centrar contenido
+
+        };
+    
+        return <div id="phaser-game" style={style} />;
     }
 
 

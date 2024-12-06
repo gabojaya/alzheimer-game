@@ -64,7 +64,7 @@ export default class SquareElement extends Phaser.GameObjects.Container {
                 
                 scene.tweens.add({
                     targets: this,
-                    scale: 1.1,
+                    scale: 1.3,
                     ease: 'Power3',
                     duration: 150,
                     delay: 0,
