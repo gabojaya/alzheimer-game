@@ -26,7 +26,7 @@ import { scaleImage, wrapResizeFn }  from '../Utils/Resize';
     }
     preload() {
         this.load.image('terminarButton', '/Assets/Button/terminar.png');
-        this.load.image('puzzlescenebk', '/Assets/GameScenes/PuzzleSbkEnBlanco.png')
+        this.load.image('puzzlescenebk', '/Assets/GameScenes/PuzzleSbk.png')
         console.log("paso de cuenta abajo 1 " + this.countDown)
         this.load.image('red', '/Assets/New/1.png')
         this.load.image('blue', '/Assets/New/8.png')

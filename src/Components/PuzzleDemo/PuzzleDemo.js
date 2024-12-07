@@ -56,10 +56,9 @@ class PuzzleDemo extends Component {
     }
 
     render() {
-        const width = `${document.documentElement.clientWidth}px`;
-        const height = `${document.documentElement.clientHeight}px`;
+
         return (
-            <div id="phaser-game" style={{ width, height, backgroundColor: "black" }}>
+            <div id="phaser-game" style={{ width:'100vw' , height: '100vh', backgroundColor: "black" , display: 'flex'}}>
                 {/* Botón de redirección al login */}
                 <div style={buttonContainerStyle}>
                     <Link to="/login">

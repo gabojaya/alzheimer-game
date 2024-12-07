@@ -1,7 +1,8 @@
 /* login.css */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f8ff;
+  background-image: url('../public/Assets/GameScenes/PuzzleSbk.png'); /* Ruta a la imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir toda el área */
   display: flex;
   justify-content: center;
   align-items: center;

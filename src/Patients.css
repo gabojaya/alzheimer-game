@@ -1,6 +1,7 @@
 /* General container to occupy full width and height of the screen */
 body{
-  background-color: #F7EDE3; /* Usando el color #FECE8C como fondo general */
+  background-image: url('../public/Assets/GameScenes/PuzzleSbk.png'); /* Ruta a la imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir toda el área */
 }
 
 .patients-container {
