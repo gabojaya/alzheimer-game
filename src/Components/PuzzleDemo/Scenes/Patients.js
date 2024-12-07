@@ -23,11 +23,18 @@ const Patients = () => {
   const handleIniciarSesion = (patient) => {
     navigate(`/start-session`, { state: { patient, therapist } }); // Pasamos ambos, paciente y terapeuta
   };
-  
+
+  const handleBackToLogin = () => {
+    navigate('/login'); // Redirige al login
+  };
 
   return (
-    
     <div className="patients-container">
+      {/* Botón de regresar */}
+      <button className="btn-back" onClick={handleBackToLogin}>
+        Regresar
+      </button>
+
       <h1>Bienvenido {therapist.name} {therapist.lastName}</h1>
       <div className="therapist-details">
         <p><strong>ID Terapeuta:</strong> {therapist.id}</p>
@@ -35,7 +42,6 @@ const Patients = () => {
         <p><strong>Especialidad:</strong> {therapist.specialty}</p>
       </div>
 
-      {/* Botón para registrar paciente */}
       <button 
         className="btn-registrar-paciente"
         onClick={handleRegistrarPaciente}

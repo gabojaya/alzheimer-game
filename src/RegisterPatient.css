@@ -24,8 +24,9 @@
   .register-patient-container h1 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #ff7f00; /* Color cálido */
+    color: #103754; /* Color cálido */
     text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   
   /* Mensaje de error */

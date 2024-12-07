@@ -16,13 +16,15 @@
   h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
-    color: #ff7f00; /* Azul para el título */
+    color: #103754; /* Azul para el título */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   
   h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin-bottom: 30px;
     color: #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   
   /* Contenedor de la selección de dibujos */
@@ -45,8 +47,9 @@
   
   /* Estilo de los botones de los dibujos */
   .drawing-options button {
-    background-color: #dc3545; /* Azul */
-    color: white;
+    background-color: #eebd41; /* Azul */
+    color: black;
+    font-weight: 600;
     border: none;
     padding: 12px 20px;
     font-size: 1rem;
@@ -58,7 +61,7 @@
   }
   
   .drawing-options button:hover {
-    background-color: #7b1c26; /* Azul oscuro */
+    background-color: #e49320; /* Azul oscuro */
   }
   
   /* Vista previa del dibujo seleccionado */
@@ -104,5 +107,25 @@
   
   .start-painting-btn:hover {
     background-color: #dc3545; /* Verde oscuro */
+  }
+
+  /* Botón de regresar */
+.btn-back1 {
+    background-color: #d24d49; /* Usando el color #103754 para el botón de regresar */
+    color: #fff;
+    border: none;
+    width: 8%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-back1:hover {
+    background-color: #65190a; /* Color más oscuro al pasar el ratón */
   }
   

@@ -26,8 +26,16 @@ const StartSession = () => {
     console.log(`Iniciando pintura con el dibujo: ${selectedDrawing}`);
   };
 
+  const handleBackToPatient = () => {
+    navigate(-1); // Redirige al login
+  };
+
   return (
     <div className="session-container">
+      {/* Botón de regresar */}
+      <button className="btn-back1" onClick={handleBackToPatient}>
+        Regresar
+      </button>
       <h1>Comienza la Sesión</h1>
       <h2>Selecciona un dibujo para pintar</h2>
 
@@ -37,7 +45,7 @@ const StartSession = () => {
           <button onClick={() => handleDrawingSelection("Círculo")}>Dibujo 1: Círculo</button>
           <button onClick={() => handleDrawingSelection("Rosa")}>Dibujo 2: Rosa</button>
           <button onClick={() => handleDrawingSelection("Estrella")}>Dibujo 3: Estrella</button>
-          <button onClick={() => handleDrawingSelection("Buho")}>Dibujo 4: Búho</button>
+          <button onClick={() => handleDrawingSelection("Búho")}>Dibujo 4: Búho</button>
           <button onClick={() => handleDrawingSelection("Flor")}>Dibujo 5: Flor</button>
         </div>
       </div>

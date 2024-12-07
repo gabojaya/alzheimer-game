@@ -1,9 +1,10 @@
 import React from "react";
-import { useLocation } from "react-router-dom"; // Para obtener los datos pasados desde la navegación
-import '../../../Patients.css'; // Importación del archivo CSS
+import { useLocation, useNavigate } from "react-router-dom"; // Import useNavigate
+import '../../../PatientHistory.css'; // Importación del archivo CSS
 
 const PatientHistory = () => {
   const location = useLocation();
+  const navigate = useNavigate(); // Use the useNavigate hook
   const { patient } = location.state || {}; // Aseguramos que el estado contenga datos del paciente
 
   if (!patient || !patient.history || patient.history.length === 0) {
@@ -14,8 +15,16 @@ const PatientHistory = () => {
     );
   }
 
+  const handleBackToPatient = () => {
+    navigate(-1); // Redirige al login o a la página anterior
+  };
+
   return (
     <div className="patient-history-container">
+        {/* Botón de regresar */}
+      <button className="btn-back1" onClick={handleBackToPatient}>
+        Regresar
+      </button>
       <h1>Historial del Paciente: {patient.nombre} {patient.apellido}</h1>
       <table className="patient-history-table">
         <thead>
