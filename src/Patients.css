@@ -90,6 +90,7 @@
     background-color: #28a745; /* Verde para los botones de acción */
     color: #fff;
     border: none;
+    width: 100%;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
